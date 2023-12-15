@@ -12,6 +12,8 @@ to run the client:
 
 ## Other things I wanted to do:
  - I never got around to shifting all the functions into their own folder of helpers, I find this format is easier to read for small projects?
-
-## Things I weren't happy with:
+ - Add user/s & auth
+ - Add a lot more UI aesthetics, would look nice? but quite time consuming
+ - Table columns with more data maybe?
+ - Clean up Submit/amend mode
 

@@ -20,7 +20,6 @@ export default function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ task: task })
     };
-
     await fetch('http://localhost:3000/tasks', requestOptions)
     setTask('');
     fetchData();
@@ -40,7 +39,6 @@ export default function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ task: updatedTask })
     };
-    console.log(task)
     await fetch(`http://localhost:3000/tasks/${id}`, requestOptions)
       .then((res) => console.log(res))
     setIsEditing(false);
@@ -56,20 +54,23 @@ export default function Home() {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setTask(event.target.value);
   };
+
   useEffect(() => {
     fetchData();
   }, []);
 
   return (
     <div className="flex mt-10 justify-center items-center flex-col">
-      <h1 className="flex justify-center border-b-2 border-black p-4 w-2/3 md:w-1/3 ">
-        <div className='flex justify-start text-xl'>
+      <h1 className="flex justify-center border-b-2 border-black p-4 w-2/3 md:w-1/3 bg-gradient-to-r bg-clip-text  text-transparent 
+            from-violet-500 via-red-500 to-violet-500
+            animate-text">
+        <div className='flex justify-start text-xl font-semibold'>
           Try
         </div>
-        <div className='flex font-bold text-4xl'>
+        <div className='flex font-bold text-6xl'>
           Task
         </div>
-        <div className='flex flex-col justify-end text-xl '>
+        <div className='flex flex-col justify-end text-xl font-semibold' >
           Me
         </div>
       </h1>
